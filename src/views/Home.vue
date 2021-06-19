@@ -16,7 +16,7 @@
           History
         </div>
       </div>
-      <div class="account">Connect Wallet</div>
+      <div class="account" @click="connectWeb3()">Connect Wallet</div>
     </div>
     <div class="center" v-if="active === 1 && !isConnected">
       <div
@@ -60,6 +60,7 @@
 <script>
 import Table from './History.vue';
 import Bridge from './Bridge.vue';
+import { getWeb3 } from '../router/wallet';
 
 export default {
   components: {
@@ -98,6 +99,16 @@ export default {
     },
     setSelected(id) {
       this.selected = id;
+    },
+    connectWeb3() {
+      console.log('----- connect web3 ----');
+      getWeb3().then((web3) => {
+        // returns a list of accounts connected
+        console.log(web3);
+        return web3.eth.getAccounts();
+      }).then((accounts) => {
+        console.log('accounts: ', accounts);
+      });
     },
     setStatus(id, status) {
       this.selected = id;
@@ -198,6 +209,7 @@ export default {
       align-items: center;
       font-size: 20px;
       color: #ffffff;
+      cursor: pointer;
     }
   }
   .center {
