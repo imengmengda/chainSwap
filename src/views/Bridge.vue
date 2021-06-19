@@ -13,7 +13,12 @@
       <div class="swap">
         <div class="swapLeft">
           <div class="formlabel">From</div>
-          <div class="swapItem" style="margin-right: 20px"></div>
+          <div class="swapItem" style="margin-right: 20px">
+            <div>
+              <img src="" />
+            </div>
+            <div></div>
+          </div>
         </div>
         <div class="swapIcon"></div>
         <div class="swapRight">
@@ -22,19 +27,47 @@
         </div>
       </div>
       <div class="formlabel">Destination Address</div>
-      <div></div>
+      <input type="text" style="margin-bottom: 30px" />
       <div class="formlabel">Amount</div>
-      <div></div>
+      <input type="text" style="margin-bottom: 20px" />
+      <div class="notice">
+        <div class="noticeLeft">Reminder:</div>
+        <div class="noticeRight">
+          <div class="noticeTop">1.The minimum amount is 20 USDT</div>
+          <div class="noticeBottom">2.The maximum amount is 10000 USDT</div>
+        </div>
+      </div>
+      <div class="swapBtn">Confirm</div>
     </div>
   </div>
 </template>
 
 <script>
+const eth = require('../assets/eth.png');
+const polk = require('../assets/dot.png');
+const heco = require('../assets/ht.png');
+const bsc = require('../assets/bnb.png');
+
 export default {
   data() {
     return {
       chainList: [
-
+        {
+          name: 'Ethereum',
+          img: eth,
+        },
+        {
+          name: 'Polkadot',
+          img: polk,
+        },
+        {
+          name: 'HECO chain',
+          img: heco,
+        },
+        {
+          name: 'BSC chain',
+          img: bsc,
+        },
       ],
     };
   },
@@ -101,6 +134,7 @@ export default {
     }
   }
   .swap {
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     position: relative;
@@ -122,5 +156,42 @@ export default {
       border-radius: 10px;
     }
   }
+  .notice {
+    display: flex;
+    justify-content: space-between;
+    .noticeLeft {
+      font-size: 16px;
+      color: #000000;
+    }
+    .noticeRight {
+      div {
+        text-align: right;
+        font-size: 14px;
+        line-height: 14px;
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+  .swapBtn {
+    margin: 30px auto 0;
+    width: 420px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+  }
+}
+input {
+  width: 580px;
+  height: 80px;
+  background: rgba(169, 169, 169, 0.1);
+  border: 1px solid #e7e7e7;
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 </style>
