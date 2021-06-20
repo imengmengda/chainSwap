@@ -45,7 +45,6 @@
             </div>
           </div>
         </div>
-        <div class="swapIcon"></div>
         <div class="swapRight">
           <div class="formlabel">To</div>
           <div class="swapItem" @click="showSwapModal2">
@@ -66,6 +65,7 @@
             </div>
           </div>
         </div>
+        <div class="swapIcon"></div>
       </div>
       <div class="formlabel">Destination Address</div>
       <input type="text" style="margin-bottom: 30px" />
@@ -183,6 +183,7 @@ export default {
     justify-content: space-between;
     position: relative;
     .selectModal {
+      overflow: hidden;
       z-index: 2;
       position: absolute;
       width: 580px;
