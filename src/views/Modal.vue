@@ -22,7 +22,7 @@
         </div>
         <div class="des">
           <div>Destination:</div>
-          <div>0xa7f6ac......B153531D</div>
+          <div>0x8351204430ba8dFEA3E4CABC46991a7510daE501</div>
         </div>
         <div class="des">
           <div>Network Fee:</div>
@@ -43,7 +43,7 @@
           >I have read and agree to the Terms of use.</el-checkbox
         >
       </div>
-      <div class="modalWrapBtn">Confirm</div>
+      <div class="modalWrapBtn" @click="depositToken">Confirm</div>
     </div>
   </div>
 </template>
@@ -55,6 +55,9 @@ export default {
     closeModal() {
       this.$emit('input', false);
     },
+    depositToken() {
+      console.log("deposit token...");
+    }
   },
 };
 </script>

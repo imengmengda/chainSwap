@@ -11,6 +11,8 @@
     "core-js": "^3.6.5",
     "element-ui": "^2.15.2",
     "ethers": "^5.3.1",
+    "ethjs-contract": "^0.2.3",
+    "ethjs-query": "^0.3.8",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0",

@@ -90,7 +90,7 @@
 <script>
 import Modal from './Modal.vue';
 
-const eth = require('../assets/eth.png');
+let eth = require('../assets/eth.png');
 const polk = require('../assets/dot.png');
 const heco = require('../assets/ht.png');
 const bsc = require('../assets/bnb.png');
@@ -135,7 +135,7 @@ export default {
     },
     showSwapModal2() {
       this.isShowSwapModal2 = !this.isShowSwapModal2;
-    },
+    }
   },
 };
 </script>

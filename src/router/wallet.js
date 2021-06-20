@@ -5,8 +5,8 @@ export const getWeb3 = async () => {
   console.log('window.ethereum: ', window.ethereum);
   if (window.ethereum) {
     web3 = new Web3(window.ethereum);
-    // Acccounts now exposed
-    await window.ethereum.enable();
+    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    console.log("connect: " + accounts);
   } else if (window.web3) {
     // Legacy dapp browsers...
     // Use Mist/MetaMask's provider.
