@@ -1,3 +1,5 @@
+import {BigNumber} from "ethers";
+
 const ethers = require('ethers');
 let url = "https://data-seed-prebsc-1-s1.binance.org:8545/";
 let provider = new ethers.providers.JsonRpcProvider(url); //这个是加载钱包时注入进来的
@@ -17,17 +19,18 @@ async function f() {
   console.log(logic)
 }
 
-async function deposit(value) {
+export const deposit = async (value) => {
   let activeWallet = new ethers.Wallet(privateKey, provider);
   let signTestToken = testToken.connect(activeWallet);
   let signBridge = bridge.connect(activeWallet);
   let overrides = {
     gasLimit: 60000,
-    gasPrice: ethers.utils.parseUnits('10', 'gwei'),
+    gasPrice: ethers.utils.parseUnits('10', 'gwei')
   }
-  let approve = await signTestToken.approve(bridgeAddress, value, overrides);
+  let tranValue = BigNumber.from(value).mul(BigNumber.from(10).pow(18));
+  let approve = await signTestToken.approve(bridgeAddress, tranValue, overrides);
   console.log(approve.hash);
-  let tx = await signBridge.depositToken(testTokenAddress, value, localAddress,"rinkeby", overrides);
+  let tx = await signBridge.depositToken(testTokenAddress, tranValue, localAddress,"rinkeby", overrides);
   console.log(tx.hash); //这个交易打在
 }
 

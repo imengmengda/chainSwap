@@ -11,11 +11,11 @@
           <img :src="require('../assets/usdt.png')" />
           USDT
         </div>
-        <div>2021-12-31 00:00:00</div>
-        <div>10.000001ETH</div>
+        <div>2021-06-20 22:18:31</div>
+        <div>1000</div>
         <div>Completed</div>
-        <div>0xa7f6ac......B153531D(VITE)</div>
-        <div>0xa7f6ac......B153531D(ETH)</div>
+        <div>0x8351204430....(BSC)</div>
+        <div>0x8351204430....(ETH)</div>
         <div>0.001ETH</div>
       </div>
       <div class="endContent">No More Content.</div>
@@ -36,7 +36,7 @@ export default {
         'To',
         'Fees',
       ],
-      dataList: [1, 2, 3],
+      dataList: [1],
     };
   },
 };

@@ -22,15 +22,15 @@
         </div>
         <div class="des">
           <div>Destination:</div>
-          <div>0x8351204430ba8dFEA3E4CABC46991a7510daE501</div>
+          <div>0x8351204430ba8dFEA3E4C....</div>
         </div>
         <div class="des">
           <div>Network Fee:</div>
-          <div>8.00USDT</div>
+          <div>0.01USDT</div>
         </div>
         <div class="des">
           <div>You will receive:</div>
-          <div>≈992.00USDT</div>
+          <div>≈1000.00USDT</div>
         </div>
         <div class="line"></div>
       </div>
@@ -49,6 +49,8 @@
 </template>
 
 <script>
+import { deposit } from '../router/bridge';
+
 export default {
   props: ['value'],
   methods: {
@@ -56,8 +58,9 @@ export default {
       this.$emit('input', false);
     },
     depositToken() {
-      console.log("deposit token...");
-    }
+      console.log('deposit token...');
+      deposit(1000);
+    },
   },
 };
 </script>
